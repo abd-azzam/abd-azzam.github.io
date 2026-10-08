@@ -5,10 +5,11 @@
 :root {
   --ink: #343434;
   --ink-muted: #666;
-  --paper: #fbf6f6;        /* page background: warm off-white */
+  --paper: #f3ebe6;        /* page background: warm off-white */
   --bar: #121212;          /* header + footer */
   --bar-border: #333;
   --accent: #8b0000;       /* links, CV button, social icons */
+  --accent-on-dark: #db5757; /* the same red, lightened to read on the dark header */
   --rule: #d3d3d3;
 
   --font-body: Arial, Helvetica, sans-serif;
@@ -121,6 +122,16 @@ header a:focus {
   display: none;
 }
 
+/* Top row of off-site links (CV, Scholar, LinkedIn, GitHub, Email). */
+header .utility-menu a {
+  color: var(--accent-on-dark);
+}
+
+header .utility-menu a:hover,
+header .utility-menu a:focus {
+  color: #fff;
+}
+
 header .main-menu a {
   border-bottom: 3px solid transparent;
   transition: border-color 0.2s;
@@ -181,14 +192,6 @@ header .main-menu a.active {
     font-size: 14px;
   }
 
-  .utility-menu a {
-    color: #bdbdbd;
-  }
-
-  .utility-menu a:hover,
-  .utility-menu a:focus {
-    color: #fff;
-  }
 }
 
 /* HEADER: narrow screens */

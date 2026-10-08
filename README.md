@@ -146,9 +146,10 @@ The palette is a handful of variables at the top of `assets/css/styles.css`. It
 follows the colours used on beagietner.github.io/webpage:
 
 ```css
---paper:  #fbf6f6;   /* page background */
+--paper:  #f3ebe6;   /* page background, a step warmer than the reference */
 --ink:    #343434;   /* text */
 --accent: #8b0000;   /* links, CV button, social icons */
+--accent-on-dark: #db5757;   /* top links, lightened to read on the dark header */
 --rule:   #d3d3d3;   /* borders */
 --bar:    #121212;   /* header and footer */
 ```
