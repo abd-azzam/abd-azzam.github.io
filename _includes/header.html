@@ -23,17 +23,7 @@
       <ul role="list" class="utility-menu">
       {% for item in site.data.navigation.utility %}
         <li>
-        {% if item.menu == 'email' %}
-          <details class="mail-menu" data-wide-only>
-            <summary aria-label="{{ item.title }}: choose an address">{{ item.title }}</summary>
-            <ul role="list" class="mail-options">
-              <li><a href="mailto:{{ site.author.email }}" title="{{ site.author.email }}" aria-label="UIII mail: {{ site.author.email }}">UIII mail</a></li>
-              <li><a href="mailto:{{ site.author.email_alt }}" title="{{ site.author.email_alt }}" aria-label="Proton Mail: {{ site.author.email_alt }}">Proton Mail</a></li>
-            </ul>
-          </details>
-        {% else %}
-          <a href="{% if item.url contains '://' or item.url contains 'mailto:' %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}"{% if item.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ item.title }}</a>
-        {% endif %}
+          <a href="{% if item.url contains '://' %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}"{% if item.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ item.title }}</a>
         </li>
       {% endfor %}
       </ul>

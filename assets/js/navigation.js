@@ -59,7 +59,7 @@
   });
 })();
 
-/* The email menus are <details> elements, so they open without JavaScript.
+/* The email menu is a <details> element, so it opens without JavaScript.
    This adds hover-to-open for a mouse, and closing on Escape, on a click
    elsewhere, and after an address is chosen. Touch and keyboard keep the
    native tap, Enter and Space toggle. */
@@ -70,18 +70,12 @@
     return;
   }
 
-  var wideHeader = window.matchMedia("(min-width: 1090.1px)");
-
   menus.forEach(function (menu) {
     var summary = menu.querySelector("summary");
     var closeTimer;
 
-    // In the phone menu the header entry is a plain expandable row.
     function hoverAllowed(event) {
-      return (
-        event.pointerType === "mouse" &&
-        (!menu.hasAttribute("data-wide-only") || wideHeader.matches)
-      );
+      return event.pointerType === "mouse";
     }
 
     menu.addEventListener("pointerenter", function (event) {
