@@ -656,13 +656,24 @@ article .about .lead {
   margin: 0;
 }
 
-/* The research interests sit under the B.A. paragraph in the right cell. */
-.about-body h2 {
-  margin-top: 28px;
+/* A short aside under the B.A. paragraph, in the right cell. */
+.about-body h3 {
+  margin: 24px 0 6px;
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 1.25;
 }
 
-.panel .ruled li {
-  border-color: rgba(52, 52, 52, 0.18);
+/* Research interests and skills sit side by side and stack when narrow. */
+.two-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: 24px 40px;
+  margin-top: 24px;
+}
+
+.two-col h2 {
+  margin-top: 0;
 }
 
 /* Current projects: one panel each, side by side and stacking when narrow. */
