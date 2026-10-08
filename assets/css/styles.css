@@ -8,6 +8,7 @@
   --paper: #f3ebe6;        /* page background: warm off-white */
   --tint: #ebe1da;         /* flat panels for current / featured content */
   --ink-soft: #595959;     /* secondary text on the tint */
+  --accent-on-dark: #db5757; /* the same red, lightened to show on the dark header */
   --card: #fff;            /* the raised profile card; matches the photo backdrop */
   --bar: #121212;          /* header */
   --bar-border: #333;
@@ -90,12 +91,41 @@ header {
   padding-bottom: 5px;
 }
 
+/* The name: the heading serif in two weights, with the short red rule that
+   marks sections elsewhere. The rule widens on hover as the link cue. */
 header h1 {
-  font-family: var(--font-body);
-  font-size: 32px;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
   margin: 0;
-  padding: 25px 0 8px;
+  padding: 22px 0 10px;
+}
+
+header h1 .family {
+  font-weight: 700;
+}
+
+header h1 a {
+  display: inline-block;
+  padding: 0;
+  font-weight: inherit;
+}
+
+header h1 a::after {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 3px;
+  margin-top: 6px;
+  background: var(--accent-on-dark);
+  transition: width 0.2s;
+}
+
+header h1 a:hover::after,
+header h1 a:focus-visible::after {
+  width: 100%;
 }
 
 header h1 a,
@@ -197,7 +227,7 @@ header .main-menu a.active {
   }
 
   header h1 {
-    padding: 0 56px 0 0;
+    padding: 8px 56px 8px 0;
     font-size: 24px;
   }
 

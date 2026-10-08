@@ -1,7 +1,10 @@
 <header role="banner" id="header">
 <div class="container">
   <div class="site-title">
-    <h1><a href="{{ '/' | relative_url }}" title="Home" rel="home">{{ site.title }}</a></h1>
+    {% assign name_words = site.title | split: ' ' %}
+    {% assign family_name = name_words | last %}
+    {% assign given_names = site.title | split: family_name | first | strip %}
+    <h1><a href="{{ '/' | relative_url }}" title="Home" rel="home"><span class="given">{{ given_names }}</span> <span class="family">{{ family_name }}</span></a></h1>
   </div>
 
   <!-- CSS-only mobile menu: a checkbox drives it, so it opens without JavaScript.
