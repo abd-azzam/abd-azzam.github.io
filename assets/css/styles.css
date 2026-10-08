@@ -6,11 +6,12 @@
   --ink: #343434;
   --ink-muted: #666;
   --paper: #f3ebe6;        /* page background: warm off-white */
+  --tint: #ebe1da;         /* flat panels for current / featured content */
+  --ink-soft: #595959;     /* secondary text on the tint */
   --card: #fff;            /* the raised profile card; matches the photo backdrop */
   --bar: #121212;          /* header */
   --bar-border: #333;
   --accent: #8b0000;       /* links, CV button, social icons */
-  --accent-on-dark: #db5757; /* the same red, lightened to read on the dark header */
   --rule: #d3d3d3;
 
   --font-body: Arial, Helvetica, sans-serif;
@@ -121,16 +122,6 @@ header a:focus {
   display: none;
 }
 
-/* Top row of off-site links (CV, Scholar, LinkedIn, GitHub, Email). */
-header .utility-menu a {
-  color: var(--accent-on-dark);
-}
-
-header .utility-menu a:hover,
-header .utility-menu a:focus {
-  color: #fff;
-}
-
 header .main-menu a {
   border-bottom: 3px solid transparent;
   transition: border-color 0.2s;
@@ -184,11 +175,6 @@ header .main-menu a.active {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
-  }
-
-  .utility-menu {
-    margin-top: 5px;
-    font-size: 14px;
   }
 
 }
@@ -349,16 +335,6 @@ header .main-menu a.active {
 
   .main-menu {
     order: 1;
-  }
-
-  .utility-menu {
-    order: 2;
-    margin-top: 4px;
-    font-size: 13px;
-  }
-
-  .utility-menu a {
-    padding: 12px 0;
   }
 }
 
@@ -646,6 +622,84 @@ strong > a {
   .timeline > li {
     grid-template-columns: 1fr;
   }
+}
+
+/* Tinted panels mark current or featured content (About me, current
+   projects). The ruled rows elsewhere carry the record. */
+.panel {
+  padding: 28px 32px;
+  background: var(--tint);
+  border-radius: 8px;
+}
+
+.panel h2 {
+  margin-top: 0;
+}
+
+/* About me: a serif standfirst, then the rest in two columns so the lines
+   stay a readable length. */
+article .about .lead {
+  font-family: var(--font-display);
+  font-size: 23px;
+  line-height: 1.5;
+}
+
+.about-body {
+  columns: 2 21rem;
+  column-gap: 40px;
+  margin-top: 8px;
+}
+
+.about-body p {
+  margin: 0 0 16px;
+  orphans: 3;
+  widows: 3;
+}
+
+.about-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Current projects: one panel each, side by side and stacking when narrow. */
+.panels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.project {
+  padding: 22px 24px;
+  background: var(--tint);
+  border-radius: 8px;
+}
+
+.project h3 {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: 21px;
+  line-height: 1.25;
+}
+
+.project p {
+  margin: 0 0 10px;
+}
+
+.project .meta {
+  color: var(--ink-soft);
+  font-size: 15px;
+}
+
+.project p:last-child {
+  margin-bottom: 0;
+}
+
+/* Years as serif numerals, so a page of dated rows scans by date. */
+.timeline--years .when {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
 }
 
 /* ======================================== */

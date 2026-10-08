@@ -12,9 +12,8 @@ Built to deploy on GitHub Pages with no build step of your own.
 1. **`_config.yml`** — your name, the one-line site description, and the `author`
    block (role, department, institution, address, email). These feed the sidebar,
    and the page titles, so you only write them once.
-2. **`index.html`** — the bio. Four paragraphs, each starting with `REPLACE`.
-3. **`_data/navigation.yml`** — which pages appear in the nav, and the small row of
-   off-site links above it (CV, Google Scholar, GitHub, email).
+2. **`index.html`** — the bio, education and research interests.
+3. **`_data/navigation.yml`** — which pages appear in the nav.
 4. **`assets/images/headshot.jpg`** (800×1000) and **`headshot-400.jpg`** (400×500) —
    the sidebar photo. To change it, replace both files with a 4:5 portrait crop.
 5. **`cv/CV-Abdullah_Azzam.docx`** — add your CV under that exact name, or rename it and update
@@ -147,7 +146,6 @@ follows the colours used on beagietner.github.io/webpage:
 --paper:  #f3ebe6;   /* page background, a step warmer than the reference */
 --ink:    #343434;   /* text */
 --accent: #8b0000;   /* links, CV button, social icons */
---accent-on-dark: #db5757;   /* top links, lightened to read on the dark header */
 --rule:   #d3d3d3;   /* borders */
 --bar:    #121212;   /* header */
 ```
