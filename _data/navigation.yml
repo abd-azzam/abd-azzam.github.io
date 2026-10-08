@@ -1,7 +1,8 @@
 # Site navigation. Add, remove, or reorder entries here and every page updates.
 #
 # main:    the primary row of links (underlined in amber when active)
-# utility: the small row above it, for off-site links
+# utility: the small row above it, for off-site links. An entry with
+#          "menu: email" opens a menu of the two addresses from _config.yml.
 main:
   - title: Home
     url: /
@@ -29,5 +30,4 @@ utility:
     url: https://x.com/aFabiusMaximus
     external: true
   - title: Email
-    url: mailto:abdullah.azzam@students.uiii.ac.id
-    external: false
+    menu: email

@@ -130,6 +130,48 @@ header .utility-menu a:focus {
   color: #fff;
 }
 
+/* The Email entry in the top row: a menu of the two addresses. */
+header .utility-menu li {
+  position: relative;
+}
+
+header .mail-menu summary {
+  padding: 8px 0;
+  list-style: none;
+  cursor: pointer;
+  color: var(--accent-on-dark);
+}
+
+header .mail-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+header .mail-menu summary::after {
+  content: " \25BE";
+}
+
+header .mail-menu summary:hover,
+header .mail-menu[open] summary {
+  color: #fff;
+}
+
+header .mail-options {
+  margin: 0;
+  list-style: none;
+}
+
+header .mail-options li {
+  margin: 0;
+}
+
+header .mail-options a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 16px;
+  font-size: 15px;
+}
+
 header .main-menu a {
   border-bottom: 3px solid transparent;
   transition: border-color 0.2s;
@@ -188,6 +230,25 @@ header .main-menu a.active {
   .utility-menu {
     margin-top: 5px;
     font-size: 14px;
+  }
+
+  /* Floats over the main menu row, so it alone gets a shadow. */
+  header .mail-options {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 5;
+    min-width: 170px;
+    padding: 4px 0;
+    background: var(--bar);
+    border: 1px solid var(--bar-border);
+    border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  header .mail-options a:hover,
+  header .mail-options a:focus {
+    background: #222;
   }
 
 }
@@ -358,6 +419,23 @@ header .main-menu a.active {
 
   .utility-menu a {
     padding: 12px 0;
+  }
+
+  header .mail-menu summary {
+    padding: 12px 0;
+  }
+
+  header .mail-options {
+    padding: 0 0 0 16px;
+  }
+
+  header .mail-options li {
+    border-bottom: none;
+  }
+
+  header .mail-options a {
+    padding: 0;
+    font-size: 13px;
   }
 }
 
