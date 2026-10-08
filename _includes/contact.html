@@ -1,11 +1,9 @@
-<!--
-  Sidebar card: photo, name, affiliation, CV button, social icons.
-  Replace assets/images/headshot.jpg with your own photo (square or 4:5 portrait
-  works best), then change the src below from headshot.svg to headshot.jpg.
--->
+<!-- Sidebar card: photo, name, affiliation, emails, CV button, social icons. -->
 <img class="headshot"
-     alt="{{ site.author.name }}"
-     src="{{ '/assets/images/headshot.svg' | relative_url }}"
+     alt="Portrait of {{ site.author.name }}"
+     src="{{ '/assets/images/headshot.jpg' | relative_url }}"
+     srcset="{{ '/assets/images/headshot-400.jpg' | relative_url }} 400w, {{ '/assets/images/headshot.jpg' | relative_url }} 800w"
+     sizes="(min-width: 383px) 333px, calc(100vw - 50px)"
      width="800" height="1000"
      loading="eager" />
 
