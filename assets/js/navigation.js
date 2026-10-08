@@ -58,3 +58,32 @@
     setMenuOpen(false);
   });
 })();
+
+/* The email menu is a <details> element, so it opens without JavaScript.
+   This closes it on Escape, on a click elsewhere, and after an address is chosen. */
+(function () {
+  var mailMenu = document.querySelector(".mail-menu");
+
+  if (!mailMenu) {
+    return;
+  }
+
+  document.addEventListener("click", function (event) {
+    if (mailMenu.open && !mailMenu.contains(event.target)) {
+      mailMenu.open = false;
+    }
+  });
+
+  mailMenu.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && mailMenu.open) {
+      mailMenu.open = false;
+      mailMenu.querySelector("summary").focus();
+    }
+  });
+
+  mailMenu.querySelectorAll(".mail-options a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      mailMenu.open = false;
+    });
+  });
+})();

@@ -25,6 +25,9 @@ utility:
   - title: GitHub
     url: https://github.com/abd-azzam
     external: true
+  - title: X
+    url: https://x.com/aFabiusMaximus
+    external: true
   - title: Email
     url: mailto:abdullah.azzam@students.uiii.ac.id
     external: false

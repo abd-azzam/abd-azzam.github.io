@@ -9,7 +9,7 @@ description: "Abdullah Azzam is an M.A. student in Political Science at Universi
 url: "https://abd-azzam.github.io"
 baseurl: ""
 
-# Shown in the sidebar and footer.
+# Shown in the sidebar.
 author:
   name: "Abdullah Azzam"
   role: "M.A. Student, Political Science"
@@ -17,12 +17,12 @@ author:
   department_url: "https://soc.uiii.ac.id/"
   institution: "Universitas Islam Internasional Indonesia (UIII)"
   institution_url: "https://uiii.ac.id/"
-  address: "Jl. Raya Bogor KM 33.5, Cisalak, Sukmajaya, Depok, West Java 16416, Indonesia"
   email: "abdullah.azzam@students.uiii.ac.id"
   email_alt: "abdazzam@protonmail.com"
   scholar: "https://scholar.google.com/citations?user=0buaHv0AAAAJ"
   linkedin: "https://www.linkedin.com/in/abd-azzam"
   github: "https://github.com/abd-azzam"
+  x: "https://x.com/aFabiusMaximus"
 
 markdown: kramdown
 permalink: ":basename:output_ext"

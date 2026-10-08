@@ -3,7 +3,7 @@
 A Jekyll site in the style of [mdcattaneo.github.io](https://mdcattaneo.github.io):
 a dark sticky header with the site title on the left and two rows of navigation on
 the right, a photo-and-affiliation sidebar next to the bio on the home page, plain
-numbered lists for papers and courses, and a dark footer with the department address.
+numbered lists for papers and courses.
 
 Built to deploy on GitHub Pages with no build step of your own.
 
@@ -11,7 +11,7 @@ Built to deploy on GitHub Pages with no build step of your own.
 
 1. **`_config.yml`** — your name, the one-line site description, and the `author`
    block (role, department, institution, address, email). These feed the sidebar,
-   the footer, and the page titles, so you only write them once.
+   and the page titles, so you only write them once.
 2. **`index.html`** — the bio. Four paragraphs, each starting with `REPLACE`.
 3. **`_data/navigation.yml`** — which pages appear in the nav, and the small row of
    off-site links above it (CV, Google Scholar, GitHub, email).
@@ -114,7 +114,6 @@ _includes/
   head.html              meta tags, title, stylesheet, favicon
   header.html            site title + navigation (mobile menu is CSS-only)
   contact.html           sidebar: photo, affiliation, CV button, social icons
-  footer.html            address block and institution line
 assets/css/styles.css    the whole design; palette lives in `:root` at the top
 assets/js/navigation.js  menu niceties only — the menu works without JS
 index.html               home page (profile card, bio, research interests, skills)
@@ -150,7 +149,7 @@ follows the colours used on beagietner.github.io/webpage:
 --accent: #8b0000;   /* links, CV button, social icons */
 --accent-on-dark: #db5757;   /* top links, lightened to read on the dark header */
 --rule:   #d3d3d3;   /* borders */
---bar:    #121212;   /* header and footer */
+--bar:    #121212;   /* header */
 ```
 
 ## Notes

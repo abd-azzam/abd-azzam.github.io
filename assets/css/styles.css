@@ -7,7 +7,7 @@
   --ink-muted: #666;
   --paper: #f3ebe6;        /* page background: warm off-white */
   --card: #fff;            /* the raised profile card; matches the photo backdrop */
-  --bar: #121212;          /* header + footer */
+  --bar: #121212;          /* header */
   --bar-border: #333;
   --accent: #8b0000;       /* links, CV button, social icons */
   --accent-on-dark: #db5757; /* the same red, lightened to read on the dark header */
@@ -43,8 +43,6 @@ body {
   background: var(--paper);
   min-width: 320px;
   min-height: 100vh;
-  display: flex;           /* sticky footer */
-  flex-direction: column;
 }
 
 .container {
@@ -74,8 +72,7 @@ body {
   outline-offset: 2px;
 }
 
-header :focus-visible,
-footer :focus-visible {
+header :focus-visible {
   outline-color: var(--paper);
 }
 
@@ -370,8 +367,7 @@ header .main-menu a.active {
 
 main {
   width: 100%;
-  padding-bottom: 32px;
-  flex: 1; /* push the footer down on short pages */
+  padding-bottom: 48px;
 }
 
 main a {
@@ -596,8 +592,7 @@ aside .affiliation br {
 /* Touch and narrow screens: the affiliation links and the two addresses get
    44px rows so they are easy to tap. */
 @media (pointer: coarse), (max-width: 1090px) {
-  aside .affiliation a,
-  aside .contact-emails a {
+  aside .affiliation a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -615,23 +610,6 @@ aside .contact-block {
 aside h3 {
   margin: 0 0 4px;
   font-size: 16px;
-}
-
-aside .contact-emails {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  font-size: 14px;
-  overflow-wrap: anywhere;
-}
-
-aside .contact-emails li {
-  margin: 0;
-}
-
-aside .contact-emails a {
-  display: block;
-  padding: 3px 0;
 }
 
 aside .cv-button-wrap {
@@ -658,101 +636,121 @@ aside .cv-button-wrap {
 }
 
 /* Social icons */
-aside .social-links {
+/* Contact icons: three to a row, each icon over a small caption, the whole
+   cell is the link. */
+aside .contact-icons {
   list-style: none;
   margin: 8px 0 0;
   padding: 0;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 8px;
+  justify-content: center;
+  gap: 8px 0;
 }
 
-aside .social-links li {
+aside .contact-icons > li {
+  flex: 0 0 33.333%;
   margin: 0;
+  position: relative;
 }
 
-aside .social-links a {
+aside .contact-icons a,
+aside .contact-icons summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-height: 44px;
+  padding: 4px 0;
+  color: var(--accent);
+  font-size: 12px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+aside .contact-icons .icon {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  color: var(--accent);
   transition: background-color 0.2s, color 0.2s;
 }
 
-aside .social-links a:hover,
-aside .social-links a:focus {
+aside .contact-icons a:hover .icon,
+aside .contact-icons a:focus-visible .icon,
+aside .contact-icons summary:hover .icon,
+aside .contact-icons summary:focus-visible .icon,
+aside .contact-icons details[open] .icon {
   background-color: var(--accent);
   color: #fff;
 }
 
-aside .social-links svg {
+aside .contact-icons svg {
   width: 22px;
   height: 22px;
   fill: currentColor;
   display: block;
 }
 
-/* ======================================== */
-/* FOOTER                                   */
-/* ======================================== */
-
-footer {
-  background-color: var(--bar);
-  color: #fff;
-  width: 100%;
-  /* Paint the page bottom black without adding scroll height. */
-  box-shadow: 0 50vh 0 50vh var(--bar);
+/* Email: one icon that opens a small menu of the two addresses. */
+aside .contact-icons summary {
+  list-style: none;
+  cursor: pointer;
 }
 
-footer .container {
+aside .contact-icons summary::-webkit-details-marker {
+  display: none;
+}
+
+/* The menu floats above the icons below it, which is why it alone gets a shadow. */
+aside .mail-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 5;
+  min-width: 170px;
+  margin: 0;
+  padding: 4px 0;
+  list-style: none;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(52, 52, 52, 0.18);
+  text-align: left;
+}
+
+aside .mail-options li {
+  margin: 0;
+}
+
+aside .mail-options a {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 16px;
-  padding-block: 24px;
+  flex-direction: row;
+  justify-content: flex-start;
+  min-height: 44px;
+  padding: 0 16px;
+  font-size: 15px;
 }
 
-footer .footer-address,
-footer .footer-meta {
-  text-align: center;
+aside .mail-options a:hover,
+aside .mail-options a:focus-visible {
+  background: var(--paper);
+  text-decoration: none;
 }
 
-footer a {
-  color: #fff;
+/* Research interests and skills sit side by side and stack when narrow. */
+.two-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px 40px;
+  margin-top: 24px;
 }
 
-footer a:hover {
-  color: #ccc;
-}
-
-footer p {
-  margin: 8px 0;
-}
-
-.footer-fineprint {
-  color: #bdbdbd;
-  font-size: 14px;
-}
-
-@media (min-width: 700px) {
-  footer .container {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 32px;
-  }
-
-  footer .footer-address {
-    text-align: left;
-  }
-
-  footer .footer-meta {
-    text-align: right;
-  }
+.two-col h2 {
+  margin-top: 0;
 }
 
 /* ======================================== */
@@ -760,7 +758,7 @@ footer p {
 /* ======================================== */
 
 @media print {
-  header, footer, .skip-link { display: none; }
+  header, .skip-link { display: none; }
   body { color: #000; }
   a { color: #000; text-decoration: underline; }
   body.home main .container { display: block; }
