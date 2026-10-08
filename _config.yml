@@ -2,33 +2,27 @@
 # Site settings — edit these first.
 # ============================================================
 title: "Abdullah Azzam"
-description: "Abdullah Azzam is a student of ... at UIN Syarif Hidayatullah Jakarta. His work focuses on ..."
+description: "Abdullah Azzam is a graduate student in Political Science at Universitas Islam Internasional Indonesia (UIII) and a policy researcher working on development, the environment, and public policy in Indonesia and the Muslim world."
 
-# Configured for a GitHub Pages USER SITE at https://abd-azzam.github.io
-#
-# A user site is served only when the repository is named exactly
-# <username>.github.io, so this needs BOTH renames, in this order:
-#   1. Account:     DurovWannaBe -> abd-azzam
-#                   (Settings -> Account -> Change username)
-#   2. Repository:  Website-     -> abd-azzam.github.io
-#                   (Settings -> General -> Repository name)
-#
-# Until both are done the site still serves from the old address. The empty
-# baseurl is only correct for a user site — if the repository keeps any other
-# name it stays a project site and needs baseurl: "/<repo-name>".
+# GitHub Pages user site: the repository abd-azzam/abd-azzam.github.io is served
+# at the root of https://abd-azzam.github.io, so baseurl stays empty.
 url: "https://abd-azzam.github.io"
 baseurl: ""
 
 # Shown in the sidebar and footer.
 author:
   name: "Abdullah Azzam"
-  role: "Undergraduate Student"
-  department: "Faculty of Social and Political Sciences"
-  department_url: "https://fisip.uinjkt.ac.id/"
-  institution: "UIN Syarif Hidayatullah Jakarta"
-  institution_url: "https://www.uinjkt.ac.id/"
-  address: "Jl. Ir. H. Juanda No. 95, Ciputat, Tangerang Selatan 15412, Indonesia"
-  email: "abdullah.azzam21@mhs.uinjkt.ac.id"
+  role: "MA Student, Political Science"
+  department: "Faculty of Social Sciences"
+  department_url: "https://soc.uiii.ac.id/"
+  institution: "Universitas Islam Internasional Indonesia (UIII)"
+  institution_url: "https://uiii.ac.id/"
+  address: "Jl. Raya Bogor KM 33.5, Cisalak, Sukmajaya, Depok, West Java 16416, Indonesia"
+  email: "abdullah.azzam@students.uiii.ac.id"
+  email_alt: "abdazzam@protonmail.com"
+  scholar: "https://scholar.google.com/citations?user=0buaHv0AAAAJ"
+  linkedin: "https://www.linkedin.com/in/abd-azzam30/"
+  github: "https://github.com/abd-azzam"
 
 markdown: kramdown
 permalink: ":basename:output_ext"

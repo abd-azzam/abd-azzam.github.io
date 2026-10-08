@@ -21,8 +21,8 @@ Built to deploy on GitHub Pages with no build step of your own.
 5. **`cv/azzam-cv.pdf`** — add your CV under that exact name, or rename it and update
    the two places it is linked (`_data/navigation.yml` and `_includes/contact.html`).
 
-Then work through `research.html`, `writing.html`, `teaching.html`, `talks.html`, and
-`service.html`. Every entry in them is a dummy you can copy or delete.
+The content pages (`research.html`, `experience.html`, `skills.html`,
+`referees.html`) are filled in from the CV. Update them as the CV changes.
 
 ## Publishing on GitHub Pages
 
@@ -119,11 +119,10 @@ _includes/
 assets/css/styles.css    the whole design; palette lives in `:root` at the top
 assets/js/navigation.js  menu niceties only — the menu works without JS
 index.html               home page (sidebar + bio)
-research.html            papers, publications, theses, interests
-writing.html             essays, reviews, notes
-teaching.html            courses, workshops, materials
-talks.html               talks by year
-service.html             refereeing, editorial, memberships
+research.html            interests, thesis, current and earlier projects
+experience.html          positions and education
+skills.html              methods, software, writing
+referees.html            referees
 papers/                  PDFs of your papers and slides
 cv/                      your CV PDF
 ```

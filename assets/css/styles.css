@@ -522,6 +522,11 @@ aside .affiliation {
   color: var(--ink-muted);
 }
 
+aside .contact-emails {
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
 aside .cv-button-wrap {
   margin-top: 20px;
 }
