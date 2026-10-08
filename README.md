@@ -142,12 +142,15 @@ Then add it to `main:` in `_data/navigation.yml`. Nothing else needs touching.
 
 ### Changing the colours
 
-The palette is six variables at the top of `assets/css/styles.css`:
+The palette is a handful of variables at the top of `assets/css/styles.css`. It
+follows the colours used on beagietner.github.io/webpage:
 
 ```css
---bar:         #121212;              /* header and footer */
---accent-deep: rgb(23, 42, 84);      /* links, CV button */
---accent-warm: rgb(201, 138, 42);    /* nav underline on the active page */
+--paper:  #fbf6f6;   /* page background */
+--ink:    #343434;   /* text */
+--accent: #8b0000;   /* links, CV button, social icons */
+--rule:   #d3d3d3;   /* borders */
+--bar:    #121212;   /* header and footer */
 ```
 
 ## Notes
