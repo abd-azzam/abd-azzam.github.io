@@ -160,7 +160,7 @@ header .main-menu a {
 header .main-menu a:hover,
 header .main-menu a:focus,
 header .main-menu a.active {
-  border-bottom-color: var(--paper);
+  border-bottom-color: var(--accent-on-dark);
   color: #fff;
 }
 
