@@ -6,6 +6,7 @@
   --ink: #343434;
   --ink-muted: #666;
   --paper: #f3ebe6;        /* page background: warm off-white */
+  --card: #fff;            /* the raised profile card; matches the photo backdrop */
   --bar: #121212;          /* header + footer */
   --bar-border: #333;
   --accent: #8b0000;       /* links, CV button, social icons */
@@ -277,11 +278,11 @@ header .main-menu a.active {
   }
 
   .navigation > .menu-button {
-    top: 10px;
-    right: 10px;
+    top: 4px;
+    right: 6px;
     transform: none;
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
     z-index: 10000;
     font-size: 0;
   }
@@ -333,6 +334,10 @@ header .main-menu a.active {
     margin-top: 4px;
     font-size: 13px;
   }
+
+  .utility-menu a {
+    padding: 12px 0;
+  }
 }
 
 /* ======================================== */
@@ -366,9 +371,15 @@ body.home main .container {
   gap: var(--gutter);
 }
 
+/* The profile card is the page's one raised surface, so identity and contact
+   read as their own section beside the bio. */
 body.home main .container > aside {
   flex: 0 0 25%;
-  padding-top: 7px;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  box-shadow: 0 2px 14px rgba(52, 52, 52, 0.1);
+  padding: 24px;
 }
 
 body.home main .container > article {
@@ -376,9 +387,27 @@ body.home main .container > article {
   min-width: 0;
 }
 
+@media (min-width: 1090.1px) {
+  body.home main .container > aside {
+    align-self: flex-start;
+  }
+}
+
 @media (max-width: 1090px) {
   body.home main .container {
     flex-direction: column;
+  }
+
+  body.home main .container > aside {
+    width: 100%;
+    max-width: 460px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  body.home main .container > aside {
+    padding: 20px;
   }
 }
 
@@ -531,12 +560,54 @@ aside .affiliation {
 
 /* Affiliation lines under the photo stay grey; every other link is red. */
 aside .affiliation a {
+  display: block;
   color: inherit;
+  text-wrap: balance;
+}
+
+aside .affiliation br {
+  display: none;
+}
+
+/* Touch and narrow screens: the affiliation links and the two addresses get
+   44px rows so they are easy to tap. */
+@media (pointer: coarse), (max-width: 1090px) {
+  aside .affiliation a,
+  aside .contact-emails a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0;
+  }
+}
+
+aside .contact-block {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+}
+
+aside h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
 }
 
 aside .contact-emails {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   font-size: 14px;
   overflow-wrap: anywhere;
+}
+
+aside .contact-emails li {
+  margin: 0;
+}
+
+aside .contact-emails a {
+  display: block;
+  padding: 3px 0;
 }
 
 aside .cv-button-wrap {
@@ -544,7 +615,9 @@ aside .cv-button-wrap {
 }
 
 .cv-button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   padding: 8px 24px;
   border: 2px solid var(--accent);
   border-radius: 4px;
@@ -563,7 +636,7 @@ aside .cv-button-wrap {
 /* Social icons */
 aside .social-links {
   list-style: none;
-  margin: 16px 0 0;
+  margin: 8px 0 0;
   padding: 0;
   display: flex;
   justify-content: center;
@@ -579,8 +652,8 @@ aside .social-links a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   color: var(--accent);
   transition: background-color 0.2s, color 0.2s;

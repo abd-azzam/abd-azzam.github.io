@@ -1,4 +1,4 @@
-<!-- Sidebar card: photo, name, affiliation, emails, CV button, social icons. -->
+<!-- Profile card: photo, name, affiliation, CV button, then the contact block. -->
 <img class="headshot"
      alt="Portrait of {{ site.author.name }}"
      src="{{ '/assets/images/headshot.jpg' | relative_url }}"
@@ -15,14 +15,16 @@
   <a href="{{ site.author.institution_url }}">{{ site.author.institution }}</a>
 </p>
 
-<p class="contact-emails">
-  <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a><br />
-  <a href="mailto:{{ site.author.email_alt }}">{{ site.author.email_alt }}</a>
-</p>
-
 <p class="cv-button-wrap">
   <a class="cv-button" href="{{ '/cv/CV-Abdullah_Azzam.docx' | relative_url }}">Curriculum Vitae</a>
 </p>
+
+<div class="contact-block">
+<h3>Contact me at</h3>
+<ul role="list" class="contact-emails">
+  <li><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
+  <li><a href="mailto:{{ site.author.email_alt }}">{{ site.author.email_alt }}</a></li>
+</ul>
 
 <ul role="list" class="social-links">
   <li>
@@ -55,3 +57,4 @@
     </a>
   </li>
 </ul>
+</div>
