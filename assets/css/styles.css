@@ -656,6 +656,15 @@ article .about .lead {
   margin: 0;
 }
 
+/* The research interests sit under the B.A. paragraph in the right cell. */
+.about-body h2 {
+  margin-top: 28px;
+}
+
+.panel .ruled li {
+  border-color: rgba(52, 52, 52, 0.18);
+}
+
 /* Current projects: one panel each, side by side and stacking when narrow. */
 .panels {
   display: grid;
@@ -664,6 +673,7 @@ article .about .lead {
 }
 
 .project {
+  max-width: 44rem;
   padding: 22px 24px;
   background: var(--tint);
   border-radius: 8px;
@@ -897,17 +907,6 @@ aside .mail-options a:focus-visible {
   text-decoration: none;
 }
 
-/* Research interests and skills sit side by side and stack when narrow. */
-.two-col {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 24px 40px;
-  margin-top: 24px;
-}
-
-.two-col h2 {
-  margin-top: 0;
-}
 
 /* ======================================== */
 /* PRINT                                    */
