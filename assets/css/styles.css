@@ -14,6 +14,7 @@
   --rule: #d3d3d3;
 
   --font-body: Arial, Helvetica, sans-serif;
+  --font-display: Georgia, "Times New Roman", serif;
   --container-max: 1440px;
   --gutter: 25px;
   --breakpoint-nav: 1090px; /* where the nav collapses to a menu button */
@@ -540,6 +541,111 @@ figure {
 
 figure img {
   margin: 0 auto;
+}
+
+/* ======================================== */
+/* CONTENT SECTIONS                         */
+/* ======================================== */
+
+/* Section headings: a serif for the academic register (a system font, so
+   nothing to download), led by a short red rule that marks where a section
+   starts. The rule is the page's one repeated motif. */
+main .container > h2,
+article h2 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  line-height: 1.15;
+  margin: 40px 0 16px;
+}
+
+main .container > h2::before,
+article h2::before {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 3px;
+  margin-bottom: 12px;
+  background: var(--accent);
+}
+
+main .container > h2:first-child {
+  margin-top: 8px;
+}
+
+/* The opening paragraph is the focal point of the home page. */
+article .lead {
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+/* A link inside <strong> keeps the bold instead of the lighter link weight. */
+strong > a {
+  font-weight: inherit;
+}
+
+/* Index-style lists: hairlines between rows instead of bullets. */
+.ruled {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ruled li {
+  margin: 0;
+  padding: 10px 0;
+  border-top: 1px solid var(--rule);
+  font-size: 17px;
+}
+
+.ruled li:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+/* Dated rows, for Education on the home page and the Experience page. */
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline > li {
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  gap: 4px 24px;
+  margin: 0;
+  padding: 14px 0;
+  border-top: 1px solid var(--rule);
+}
+
+.timeline > li:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.timeline .when {
+  color: var(--ink-muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.timeline .what strong,
+.timeline .what > span {
+  display: block;
+}
+
+.timeline .what strong {
+  font-size: 17px;
+}
+
+.timeline .muted {
+  margin-top: 4px;
+  color: var(--ink-muted);
+  font-size: 15px;
+}
+
+@media (max-width: 640px) {
+  .timeline > li {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ======================================== */

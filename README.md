@@ -116,9 +116,9 @@ _includes/
   contact.html           sidebar: photo, affiliation, CV button, social icons
 assets/css/styles.css    the whole design; palette lives in `:root` at the top
 assets/js/navigation.js  menu niceties only — the menu works without JS
-index.html               home page (profile card, bio, research interests, skills)
+index.html               home page (profile card, bio, education, research interests, skills)
 research.html            interests, thesis, current and earlier projects
-experience.html          positions and education
+experience.html          positions, as a dated list
 referees.html            referees
 papers/                  PDFs of your papers and slides
 cv/                      your CV PDF
