@@ -526,6 +526,11 @@ aside .affiliation {
   color: var(--ink-muted);
 }
 
+/* Affiliation lines under the photo stay grey; every other link is red. */
+aside .affiliation a {
+  color: inherit;
+}
+
 aside .contact-emails {
   font-size: 14px;
   overflow-wrap: anywhere;

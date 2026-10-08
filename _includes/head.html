@@ -25,6 +25,6 @@
 
     <title>{% if page.title and page.title != site.title %}{{ page.title }} &middot; {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 
-    <link rel="stylesheet" media="all" href="{{ '/assets/css/styles.css' | relative_url }}" />
+    <link rel="stylesheet" media="all" href="{{ '/assets/css/styles.css' | relative_url }}?v={{ site.time | date: '%s' }}" />
     <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon.svg' | relative_url }}" />
     {% feed_meta %}
