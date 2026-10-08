@@ -4,11 +4,12 @@
     <h1><a href="{{ '/' | relative_url }}" title="Home" rel="home">{{ site.title }}</a></h1>
   </div>
 
-  <!-- CSS-only mobile menu toggle (checkbox hack); navigation.js only adds niceties. -->
-  <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-expanded="false" autocomplete="off" />
-  <label for="menu-toggle" class="menu-button" aria-label="Open navigation menu">&#9776;</label>
+  <!-- CSS-only mobile menu: a checkbox drives it, so it opens without JavaScript.
+       navigation.js adds Enter-to-open, focus handling and Escape. -->
+  <input type="checkbox" id="menu-toggle" class="menu-toggle" role="button" aria-label="Menu" aria-controls="site-navigation" aria-expanded="false" autocomplete="off" />
+  <label for="menu-toggle" class="menu-button"><span class="menu-icon" aria-hidden="true">&#9776;</span><span class="menu-text">Menu</span></label>
 
-  <div class="navigation">
+  <div class="navigation" id="site-navigation">
     <label for="menu-toggle" class="menu-button" aria-label="Close navigation menu">&times;</label>
     <nav aria-label="Site">
       <ul role="list" class="main-menu">

@@ -3,12 +3,12 @@
 # main:    the primary row of links (underlined in amber when active)
 # utility: the small row above it, for off-site links
 main:
+  - title: Home
+    url: /
   - title: Research
     url: /research/
   - title: Experience
     url: /experience/
-  - title: Skills
-    url: /skills/
   - title: Referees
     url: /referees/
 

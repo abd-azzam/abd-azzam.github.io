@@ -236,23 +236,47 @@ header .main-menu a.active {
     text-align: center;
   }
 
+  /* The open button: icon plus a visible "Menu" label. */
   .container > .menu-button {
     position: fixed;
     top: 8px;
     right: 16px;
     transform: none;
     z-index: 1040;
-    font-size: 0;
+    width: auto;
+    gap: 8px;
+    padding: 0 8px;
+    font-size: 16px;
+    font-weight: 500;
   }
 
-  .container > .menu-button::before {
-    content: "\2630";
-    font-size: 32px;
+  .menu-icon {
+    font-size: 28px;
     line-height: 1;
   }
 
   .menu-toggle:checked + .menu-button {
     display: none;
+  }
+
+  /* Hidden but still focusable, so keyboard users can reach the button.
+     On wide screens it stays display: none and is never a tab stop. */
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    opacity: 0;
+  }
+
+  .menu-toggle:focus-visible + .menu-button {
+    outline: 3px solid var(--paper);
+    outline-offset: 2px;
   }
 
   .menu-button:hover {
