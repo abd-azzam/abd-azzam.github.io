@@ -17,7 +17,7 @@ Built to deploy on GitHub Pages with no build step of your own.
    off-site links above it (CV, Google Scholar, GitHub, email).
 4. **`assets/images/headshot.jpg`** (800×1000) and **`headshot-400.jpg`** (400×500) —
    the sidebar photo. To change it, replace both files with a 4:5 portrait crop.
-5. **`cv/azzam-cv.pdf`** — add your CV under that exact name, or rename it and update
+5. **`cv/CV-Abdullah_Azzam.docx`** — add your CV under that exact name, or rename it and update
    the two places it is linked (`_data/navigation.yml` and `_includes/contact.html`).
 
 The content pages (`research.html`, `experience.html`, `skills.html`,
