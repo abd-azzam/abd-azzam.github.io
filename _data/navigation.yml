@@ -8,5 +8,7 @@ main:
     url: /research/
   - title: Experience
     url: /experience/
+  - title: Blog
+    url: /blog/
   - title: Referees
     url: /referees/

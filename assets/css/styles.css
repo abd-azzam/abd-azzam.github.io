@@ -557,7 +557,8 @@ figure img {
    nothing to download), led by a short red rule that marks where a section
    starts. The rule is the page's one repeated motif. */
 main .container > h2,
-article h2 {
+article h2,
+.two-col h2 {
   font-family: var(--font-display);
   font-size: 28px;
   line-height: 1.15;
@@ -565,7 +566,8 @@ article h2 {
 }
 
 main .container > h2::before,
-article h2::before {
+article h2::before,
+.two-col h2::before {
   content: "";
   display: block;
   width: 36px;
@@ -692,6 +694,25 @@ article .about .lead {
   font-family: var(--font-display);
   font-size: 20px;
   line-height: 1.25;
+}
+
+/* Blog: the opening note is the page's focal point, in the heading serif. */
+.blog-intro {
+  max-width: 40rem;
+  margin: 8px 0 0;
+  font-family: var(--font-display);
+  font-size: 23px;
+  line-height: 1.5;
+}
+
+/* An empty list: the same hairlines as a ruled list, with one honest line. */
+.empty {
+  margin: 0;
+  padding: 12px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink-muted);
+  font-size: 17px;
 }
 
 /* Research interests and skills sit side by side and stack when narrow. */
