@@ -142,9 +142,14 @@ header a {
   padding: 8px 0;
 }
 
-header a:hover,
-header a:focus {
-  color: #ccc;
+/* Hover styling applies only where a real pointer exists, so a tap on a phone
+   cannot leave a link stuck in its hover state. Keyboard focus is shown by the
+   outline ring, never by the underline, so the underline always means "this
+   page" (or the link under the mouse). */
+@media (hover: hover) {
+  header a:hover {
+    color: #ccc;
+  }
 }
 
 /* The checkbox that drives the mobile menu is never shown. */
@@ -157,11 +162,16 @@ header .main-menu a {
   transition: border-color 0.2s;
 }
 
-header .main-menu a:hover,
-header .main-menu a:focus,
 header .main-menu a.active {
   border-bottom-color: var(--accent-on-dark);
   color: #fff;
+}
+
+@media (hover: hover) {
+  header .main-menu a:hover {
+    border-bottom-color: var(--accent-on-dark);
+    color: #fff;
+  }
 }
 
 /* HEADER: wide screens */

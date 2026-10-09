@@ -16,21 +16,33 @@
     menuToggle.setAttribute("aria-expanded", String(isOpen));
   }
 
+  var openedByKeyboard = false;
+
   menuToggle.addEventListener("change", function () {
     menuToggle.setAttribute("aria-expanded", String(menuToggle.checked));
 
     // The toggle is hidden while the menu is open, so a keyboard user who
-    // opened it needs focus moved to the first link.
-    if (menuToggle.checked && document.activeElement === menuToggle) {
+    // opened it needs focus moved to the first link. A tap or a click must
+    // not do this: it would put focus on Home whatever page is current.
+    if (
+      menuToggle.checked &&
+      openedByKeyboard &&
+      document.activeElement === menuToggle
+    ) {
       var first = document.querySelector(".navigation a");
       if (first) {
         first.focus();
       }
     }
+    openedByKeyboard = false;
   });
 
-  // A checkbox only answers to Space; let Enter open the menu as well.
+  // A checkbox only answers to Space; let Enter open the menu as well, and
+  // remember that the keyboard did it.
   menuToggle.addEventListener("keydown", function (event) {
+    if (event.key === "Enter" || event.key === " ") {
+      openedByKeyboard = true;
+    }
     if (event.key === "Enter") {
       event.preventDefault();
       menuToggle.click();
