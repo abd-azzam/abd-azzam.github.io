@@ -21,6 +21,7 @@ Built to deploy on GitHub Pages with no build step of your own.
 
 The content pages (`index.html`, `research.html`, `experience.html`,
 `blog.html`, `referees.html`) are filled in from the CV. Update them as the CV changes.
+`side-projects.html` is separate: it lists software projects and is not drawn from the CV.
 
 ## Publishing on GitHub Pages
 
@@ -118,6 +119,7 @@ assets/js/navigation.js  menu niceties only — the menu works without JS
 index.html               home page (profile card, bio, education, research interests, skills)
 research.html            interests, thesis, current and earlier projects
 experience.html          positions, as a dated list
+side-projects.html       software side projects; each panel is one clickable link
 blog.html                thoughts and Substack (empty until there is writing)
 referees.html            referees
 papers/                  PDFs of your papers and slides

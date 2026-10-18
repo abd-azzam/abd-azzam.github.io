@@ -771,6 +771,55 @@ article .about .lead {
   margin-bottom: 0;
 }
 
+/* A screenshot inside a project panel. */
+.project .shot {
+  margin: 16px 0;
+}
+
+.project .shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+}
+
+.project .shot figcaption {
+  margin-top: 6px;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+/* A project that is itself a link: the title's anchor is stretched over the
+   whole panel, so a click anywhere opens it. The visible cue at the bottom is
+   decoration; the title is the link for keyboards and screen readers. */
+.project--link {
+  position: relative;
+  border: 1px solid transparent;
+}
+
+.project--link h3 a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+}
+
+.project--link .open {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+@media (hover: hover) {
+  .project--link:hover {
+    border-color: var(--accent);
+  }
+
+  .project--link:hover .open {
+    text-decoration: underline;
+  }
+}
+
 /* Years as serif numerals, so a page of dated rows scans by date. */
 .timeline--years .when {
   color: var(--ink);
