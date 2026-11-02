@@ -401,17 +401,21 @@ main .container {
   padding-top: var(--gutter);
 }
 
-/* Home page: sidebar beside the bio. */
+/* Home page: a sidebar column beside the bio. The profile card is on top and
+   the side-project card under it; the bio spans both rows. */
 body.home main .container {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: minmax(0, 25%) minmax(0, 1fr);
   gap: var(--gutter);
+  align-items: start;
 }
 
 /* The profile card is the page's one raised surface, so identity and contact
-   read as their own section beside the bio. */
+   read as their own section beside the bio. The side-project card under it
+   shares the look. */
 body.home main .container > aside {
-  flex: 0 0 25%;
+  grid-column: 1;
+  grid-row: 1;
   background: var(--card);
   border: 1px solid var(--rule);
   border-radius: 8px;
@@ -419,20 +423,30 @@ body.home main .container > aside {
   padding: 24px;
 }
 
+body.home main .container > aside.software {
+  grid-row: 2;
+}
+
 body.home main .container > article {
-  flex: 1 1 auto;
+  grid-column: 2;
+  grid-row: 1 / span 2;
   min-width: 0;
 }
 
-@media (min-width: 1090.1px) {
-  body.home main .container > aside {
-    align-self: flex-start;
-  }
-}
-
+/* Narrow screens: one column, profile first, bio next, and the side project
+   last so it never pushes the bio down. */
 @media (max-width: 1090px) {
   body.home main .container {
-    flex-direction: column;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  body.home main .container > article {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  body.home main .container > aside.software {
+    grid-row: 3;
   }
 
   body.home main .container > aside {
@@ -810,6 +824,27 @@ article .about .lead {
   font-weight: 600;
 }
 
+/* "Open on GitHub" and the download button on one row. The button is a real
+   link of its own, so it sits above the panel-wide link layer. */
+.project .actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+  margin-top: 4px;
+}
+
+.project .actions .cv-button {
+  position: relative;
+  z-index: 1;
+}
+
+.project .note {
+  margin: 10px 0 0;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
 @media (hover: hover) {
   .project--link:hover {
     border-color: var(--accent);
@@ -901,6 +936,37 @@ aside h3 {
 
 aside .cv-button-wrap {
   margin-top: 20px;
+}
+
+/* Side-project card under the profile card on the home page. */
+aside.software .software-name {
+  margin: 8px 0 6px;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+aside.software .software-desc {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 15px;
+}
+
+aside.software .cv-button-wrap {
+  margin-top: 16px;
+}
+
+/* In the narrowest sidebar the label wraps to two lines; keep them centred. */
+aside.software .cv-button {
+  justify-content: center;
+  text-align: center;
+}
+
+aside.software .software-meta {
+  margin: 12px 0 0;
+  color: var(--ink-muted);
+  font-size: 13px;
 }
 
 .cv-button {
