@@ -6,8 +6,16 @@ redirect_from:
   - /skills/
   - /skills.html
 ---
+{% capture cv_download %}{{ site.claim_viewer.repo_url }}/releases/download/v{{ site.claim_viewer.version }}/ClaimViewer-Setup-{{ site.claim_viewer.version }}.exe{% endcapture %}
 <aside aria-label="Profile and contact">
   {% include contact.html %}
+</aside>
+<aside class="software" aria-label="Side project">
+  <h3>Side project</h3>
+  <p class="software-name"><a href="{{ '/side-projects/' | relative_url }}">Claim Viewer</a></p>
+  <p class="software-desc">A Windows app for reading papers. Save passages as claims, keep notes, ask AI about the text, and see how it all connects in a graph.</p>
+  <p class="cv-button-wrap"><a class="cv-button" href="{{ cv_download }}">Download for Windows</a></p>
+  <p class="software-meta">Version {{ site.claim_viewer.version }}. The installer is unsigned, so Windows SmartScreen may warn. <a href="{{ '/side-projects/' | relative_url }}">More about it</a></p>
 </aside>
 <article>
   <section class="about panel">

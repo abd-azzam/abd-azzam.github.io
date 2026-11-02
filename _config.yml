@@ -24,6 +24,13 @@ author:
   github: "https://github.com/abd-azzam"
   x: "https://x.com/aFabiusMaximus"
 
+# Claim Viewer, shown on the home page and the Side Projects page. The installer
+# link is built from the version: <repo_url>/releases/download/v<version>/ClaimViewer-Setup-<version>.exe
+# When you publish a new release on GitHub, change `version` here and both pages follow.
+claim_viewer:
+  version: "2.6.1"
+  repo_url: "https://github.com/abd-azzam/Claim-Viewer"
+
 markdown: kramdown
 permalink: ":basename:output_ext"
 theme: null

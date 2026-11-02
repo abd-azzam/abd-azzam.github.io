@@ -8,10 +8,11 @@ redirect_from:
 
 <p class="blog-intro">Small things I built for myself while doing research, mostly because something annoyed me. Nothing here is peer reviewed.</p>
 
+{% capture cv_download %}{{ site.claim_viewer.repo_url }}/releases/download/v{{ site.claim_viewer.version }}/ClaimViewer-Setup-{{ site.claim_viewer.version }}.exe{% endcapture %}
 <h2>Projects</h2>
 <div class="panels">
   <article class="project project--link">
-    <h3><a href="https://github.com/abd-azzam/Claim-Viewer" target="_blank" rel="noopener noreferrer">Claim Viewer</a></h3>
+    <h3><a href="{{ site.claim_viewer.repo_url }}" target="_blank" rel="noopener noreferrer">Claim Viewer</a></h3>
     <p class="meta">A desktop app for reading papers, with claims, notes and Word citations. Windows 10 and 11. MIT licensed.</p>
     <p>Zotero keeps my PDFs and highlights, but it doesn't draw how the claims across my readings connect, and it has no place for my own reading notes. Word can make a citation, but not the sentence the citation rests on. So this does the reading, the tagging, the notes, the graph, the AI chat and the Word citations in one place.</p>
     <p>Select a passage and save it as a claim, tag it, and link it to claims in other readings. Write Zettelkasten-style notes under nested tags, file your PDFs in folders the way Zotero does, and see how it all fits together as a graph. You can also ask an AI about the PDF, using your own provider, and the points in its answers link to the page they came from. Citations and a bibliography go into desktop Word from a ribbon tab, in APSA and other styles.</p>
@@ -22,6 +23,10 @@ redirect_from:
            width="1600" height="1000" loading="lazy" />
       <figcaption>The papers, their text and their claims here are invented.</figcaption>
     </figure>
-    <p class="open" aria-hidden="true">Open on GitHub &rarr;</p>
+    <div class="actions">
+      <span class="open" aria-hidden="true">Open on GitHub &rarr;</span>
+      <a class="cv-button" href="{{ cv_download }}">Download for Windows (v{{ site.claim_viewer.version }})</a>
+    </div>
+    <p class="note">The installer is unsigned, so Windows SmartScreen may warn.</p>
   </article>
 </div>

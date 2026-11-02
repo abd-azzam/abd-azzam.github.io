@@ -23,6 +23,15 @@ The content pages (`index.html`, `research.html`, `experience.html`,
 `blog.html`, `referees.html`) are filled in from the CV. Update them as the CV changes.
 `side-projects.html` is separate: it lists software projects and is not drawn from the CV.
 
+### Claim Viewer download link
+
+The Download buttons on the home page (side-project card under the profile) and on the
+Side Projects page are built from `claim_viewer.version` in `_config.yml`:
+`https://github.com/abd-azzam/Claim-Viewer/releases/download/v<version>/ClaimViewer-Setup-<version>.exe`.
+When you publish a new release of Claim Viewer on GitHub, change `version` there and both
+buttons follow. The tag must be `v<version>` and the asset must be named
+`ClaimViewer-Setup-<version>.exe`, as in 2.6.1.
+
 ## Publishing on GitHub Pages
 
 In the repository, go to **Settings → Pages** and set the source to **Deploy from a
