@@ -805,8 +805,7 @@ article .about .lead {
 }
 
 /* A project that is itself a link: the title's anchor is stretched over the
-   whole panel, so a click anywhere opens it. The visible cue at the bottom is
-   decoration; the title is the link for keyboards and screen readers. */
+   whole panel, so a click anywhere opens it. */
 .project--link {
   position: relative;
   border: 1px solid transparent;
@@ -819,18 +818,13 @@ article .about .lead {
   border-radius: 8px;
 }
 
-.project--link .open {
-  color: var(--accent);
-  font-weight: 600;
-}
-
-/* "Open on GitHub" and the download button on one row. The button is a real
-   link of its own, so it sits above the panel-wide link layer. */
+/* "Open on GitHub" and the download button on one row. Both are real links of
+   their own, so they sit above the panel-wide link layer. */
 .project .actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 12px 24px;
+  gap: 12px 16px;
   margin-top: 4px;
 }
 
@@ -848,10 +842,6 @@ article .about .lead {
 @media (hover: hover) {
   .project--link:hover {
     border-color: var(--accent);
-  }
-
-  .project--link:hover .open {
-    text-decoration: underline;
   }
 }
 
